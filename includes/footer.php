@@ -26,7 +26,7 @@
     <small>© <?php echo date('Y'); ?> Speedy Motors. All rights reserved.</small>
   </div>
 </footer>
-<script src="/carShop/app.js"></script>
+<script src="<?php echo htmlspecialchars(base_url('app.js')); ?>"></script>
 </body>
 </html>
 <!-- Alex, if you forget the api key, its in the secret dir! -->

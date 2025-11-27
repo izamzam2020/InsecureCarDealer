@@ -59,7 +59,7 @@ include __DIR__ . '/includes/nav.php';
           <article class="card reveal">
             <div class="card__body">
               <h3>No cars found</h3>
-              <p>Try running the <a href="/carShop/seed.php">seed script</a> to populate sample data.</p>
+              <p>Try running the <a href="<?php echo htmlspecialchars(base_url('seed.php')); ?>">seed script</a> to populate sample data.</p>
             </div>
           </article>
         <?php } ?>

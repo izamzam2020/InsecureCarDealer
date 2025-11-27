@@ -11,7 +11,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
   }
   @session_destroy();
-  header('Location: /carShop/login.php');
+  header('Location: ' . base_url('login.php'));
   exit;
 }
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($username === 'admin' && $password === 'password123') {
     $_SESSION['logged_in'] = true;
     $_SESSION['username'] = 'admin';
-    header('Location: /carShop/admin.php');
+    header('Location: ' . base_url('admin.php'));
     exit;
   } else {
     $error = 'Invalid username or password';
@@ -41,8 +41,8 @@ include __DIR__ . '/includes/nav.php';
         <h3>You are logged in</h3>
         <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>.</p>
         <div class="card__meta">
-          <a class="btn btn--primary" href="/carShop/">Go to Home</a>
-          <a class="btn btn--ghost" href="/carShop/login.php?action=logout">Logout</a>
+          <a class="btn btn--primary" href="<?php echo htmlspecialchars(base_url()); ?>">Go to Home</a>
+          <a class="btn btn--ghost" href="<?php echo htmlspecialchars(base_url('login.php?action=logout')); ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@ include __DIR__ . '/includes/nav.php';
           <?php if ($error) { ?>
             <p style="color:#f87171; margin:0 0 10px;"><?php echo htmlspecialchars($error); ?></p>
           <?php } ?>
-          <form method="post" action="/carShop/login.php" style="display:grid; gap:12px;">
+          <form method="post" action="<?php echo htmlspecialchars(base_url('login.php')); ?>" style="display:grid; gap:12px;">
             <label>
               <span style="display:block; font-size:13px; color:#9aa3af;">Username</span>
               <input name="username" type="text" value="" style="width:100%; padding:10px; background:#0f1216; border:1px solid #1f2430; border-radius:10px; color:#e5e7eb;">

@@ -36,7 +36,7 @@ if ($DB_CONNECTED && $q !== '') {
       <?php } else { ?>
         <div class="card" style="padding:16px; margin-top:12px;">
           <div class="card__body">
-            <form method="get" action="/carShop/search.php" style="display:flex; gap:10px; align-items:center;">
+            <form method="get" action="<?php echo htmlspecialchars(base_url('search.php')); ?>" style="display:flex; gap:10px; align-items:center;">
               <input type="text" name="q" value="<?php echo htmlspecialchars($q); ?>" placeholder="Search customers..." style="flex:1; padding:10px; background:#0f1216; border:1px solid #1f2430; border-radius:10px; color:#e5e7eb;">
               <button class="btn btn--primary" type="submit">Search</button>
             </form>

@@ -9,15 +9,15 @@ $isLogin = ($base === 'login.php');
 ?>
 <header class="site-header">
   <div class="container nav-container">
-    <a href="/carShop/" class="brand">Speedy<span>Motors</span></a>
+    <a href="<?php echo htmlspecialchars(base_url()); ?>" class="brand">Speedy<span>Motors</span></a>
     <nav class="top-nav" id="topNav">
-      <a href="/carShop/"<?php echo $isHome ? ' class="active"' : ''; ?>>Home</a>
-      <a href="/carShop/reviews.php"<?php echo $isReviews ? ' class="active"' : ''; ?>>Reviews</a>
+      <a href="<?php echo htmlspecialchars(base_url()); ?>"<?php echo $isHome ? ' class="active"' : ''; ?>>Home</a>
+      <a href="<?php echo htmlspecialchars(base_url('reviews.php')); ?>"<?php echo $isReviews ? ' class="active"' : ''; ?>>Reviews</a>
       <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
-        <a class="<?php echo $isAdmin ? 'cta active' : 'cta'; ?>" href="/carShop/admin.php">Admin</a>
-        <a href="/carShop/login.php?action=logout">Logout</a>
+        <a class="<?php echo $isAdmin ? 'cta active' : 'cta'; ?>" href="<?php echo htmlspecialchars(base_url('admin.php')); ?>">Admin</a>
+        <a href="<?php echo htmlspecialchars(base_url('login.php?action=logout')); ?>">Logout</a>
       <?php } else { ?>
-        <a class="<?php echo $isLogin ? 'cta active' : 'cta'; ?>" href="/carShop/login.php">Login</a>
+        <a class="<?php echo $isLogin ? 'cta active' : 'cta'; ?>" href="<?php echo htmlspecialchars(base_url('login.php')); ?>">Login</a>
       <?php } ?>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">

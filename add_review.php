@@ -22,7 +22,7 @@ if (isset($_FILES['image']) && isset($_FILES['image']['tmp_name']) && $_FILES['i
 	$destName = basename($_FILES['image']['name']);
 	$destPath = $uploadDir . '/' . $destName;
 	@move_uploaded_file($_FILES['image']['tmp_name'], $destPath);
-	$imagePath = '/carShop/images/uploads/' . $destName;
+	$imagePath = base_url('images/uploads/' . $destName);
 }
 
 // Fixed customer_name for demo; could be a free text as well (unsanitized)

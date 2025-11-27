@@ -50,7 +50,7 @@ if ($DB_CONNECTED && $id !== null) {
           </p>
           <div class="card__meta">
             <span class="price">$<?php echo number_format((float)$car['price'], 2); ?></span>
-            <a class="btn btn--primary" href="/carShop/">Back to Home</a>
+            <a class="btn btn--primary" href="<?php echo htmlspecialchars(base_url()); ?>">Back to Home</a>
           </div>
         </div>
       </div>

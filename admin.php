@@ -71,9 +71,9 @@ $counts = [
         <div class="card__body">
           <h3>Quick Actions</h3>
           <div class="card__meta" style="margin-top:8px;">
-            <a class="btn btn--primary" href="/carShop/seed.php">Run Seeder</a>
-            <a class="btn btn--ghost" href="/carShop/reset.php">Reset (truncate tables)</a>
-            <a class="btn btn--ghost" href="/carShop/">Go to Home</a>
+            <a class="btn btn--primary" href="<?php echo htmlspecialchars(base_url('seed.php')); ?>">Run Seeder</a>
+            <a class="btn btn--ghost" href="<?php echo htmlspecialchars(base_url('reset.php')); ?>">Reset (truncate tables)</a>
+            <a class="btn btn--ghost" href="<?php echo htmlspecialchars(base_url()); ?>">Go to Home</a>
           </div>
         </div>
       </div>

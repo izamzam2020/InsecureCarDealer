@@ -86,7 +86,7 @@ $tables = [
   <meta charset="utf-8">
   <title>Setup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/carShop/style.css">
+  <link rel="stylesheet" href="<?php echo htmlspecialchars(base_url('style.css')); ?>">
   <style>
     body { background:#0b0d10; color:#e5e7eb; font-family: Inter, system-ui, sans-serif; }
     .container { width:min(900px, 92%); margin:40px auto; }
@@ -104,7 +104,7 @@ $tables = [
       <?php if (!$DB_CONNECTED) { ?>
         <h1>Database connection error</h1>
         <p class="err"><?php echo htmlspecialchars($DB_ERROR ?: 'Unable to connect with the config provided.'); ?></p>
-        <p class="muted">Update <code>/carShop/includes/config.php</code> with working credentials and rerun this setup script.</p>
+        <p class="muted">Update <code>includes/config.php</code> with working credentials and rerun this setup script.</p>
       <?php } else { ?>
         <h1>Database connected</h1>
         <p class="ok">Connection established. Creating tables if they do not exist.</p>
@@ -123,7 +123,7 @@ $tables = [
             <li class="<?php echo $class; ?>"><?php echo htmlspecialchars($message); ?></li>
           <?php endforeach; ?>
         </ul>
-        <p class="muted">Once this succeeds you can optionally run <a href="/carShop/seed.php">seed.php</a> to populate demo data.</p>
+        <p class="muted">Once this succeeds you can optionally run <a href="<?php echo htmlspecialchars(base_url('seed.php')); ?>">seed.php</a> to populate demo data.</p>
       <?php } ?>
     </div>
   </div>

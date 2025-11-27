@@ -23,7 +23,7 @@ header('Content-Type: text/html; charset=utf-8');
   <meta charset="utf-8">
   <title>Reset Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/carShop/style.css">
+  <link rel="stylesheet" href="<?php echo htmlspecialchars(base_url('style.css')); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -46,8 +46,8 @@ header('Content-Type: text/html; charset=utf-8');
         <?php } ?>
       </ul>
       <div style="margin-top:10px;">
-        <a class="btn btn--primary" href="/carShop/seed.php">Run Seeder</a>
-        <a class="btn btn--ghost" href="/carShop/">Back to Home</a>
+        <a class="btn btn--primary" href="<?php echo htmlspecialchars(base_url('seed.php')); ?>">Run Seeder</a>
+        <a class="btn btn--ghost" href="<?php echo htmlspecialchars(base_url()); ?>">Back to Home</a>
       </div>
     </div>
   </div>

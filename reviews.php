@@ -60,7 +60,7 @@ include __DIR__ . '/includes/nav.php';
           <article class="card reveal">
             <div class="card__body">
               <h3>No reviews yet</h3>
-              <p>Run the <a href="/carShop/seed.php">seed script</a> to add demo reviews.</p>
+              <p>Run the <a href="<?php echo htmlspecialchars(base_url('seed.php')); ?>">seed script</a> to add demo reviews.</p>
             </div>
           </article>
         <?php } ?>
@@ -148,7 +148,7 @@ include __DIR__ . '/includes/nav.php';
       form.addEventListener('submit', function(e){
         e.preventDefault();
         var fd = new FormData(form);
-        fetch('/carShop/add_review.php', {
+        fetch('<?php echo htmlspecialchars(base_url('add_review.php')); ?>', {
           method: 'POST',
           body: fd
         }).then(function(r){ return r.json(); })

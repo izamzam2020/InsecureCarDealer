@@ -3,7 +3,7 @@ require __DIR__ . '/includes/config.php';
 
 // Check if user is logged in (but no role checking)
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-  header('Location: /carShop/login.php');
+  header('Location: ' . base_url('login.php'));
   exit;
 }
 
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $DB_CONNECTED) {
         <div class="card" style="padding:16px; margin-top:16px;">
           <div class="card__body">
             <h3>User Details</h3>
-            <form method="post" action="/carShop/add_user.php" style="display:grid; gap:16px; margin-top:12px; max-width:400px;">
+            <form method="post" action="<?php echo htmlspecialchars(base_url('add_user.php')); ?>" style="display:grid; gap:16px; margin-top:12px; max-width:400px;">
               <label>
                 <span style="display:block; font-size:13px; color:#9aa3af; margin-bottom:4px;">Username</span>
                 <input name="username" type="text" required style="width:100%; padding:10px; background:#0f1216; border:1px solid #1f2430; border-radius:10px; color:#e5e7eb;">

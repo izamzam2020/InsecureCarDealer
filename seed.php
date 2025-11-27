@@ -250,16 +250,16 @@ for ($i=0; $i<$target; $i++) {
 // Seed reviews (exactly 4 fixed demo reviews)
 mysqli_query($conn, "DELETE FROM reviews");
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Alice Johnson', 5, 'Excellent service', 'Bought a 2021 Civic. Smooth process, great deal.', '/carShop/images/car1.svg', '" . rand_date(120) . "')");
+  'Alice Johnson', 5, 'Excellent service', 'Bought a 2021 Civic. Smooth process, great deal.', '" . base_url('images/car1.svg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Marcus Lee', 4, 'Transparent and friendly', 'Staff were honest and helpful. Would buy again.', '/carShop/images/car2.svg', '" . rand_date(120) . "')");
+  'Marcus Lee', 4, 'Transparent and friendly', 'Staff were honest and helpful. Would buy again.', '" . base_url('images/car2.svg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Sofia Ramirez', 5, 'Love my new SUV', 'Financing was quick and painless. Highly recommend.', '/carShop/images/car3.svg', '" . rand_date(120) . "')");
+  'Sofia Ramirez', 5, 'Love my new SUV', 'Financing was quick and painless. Highly recommend.', '" . base_url('images/car3.svg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Daniel Kim', 4, 'Great selection', 'Found exactly what I needed at a fair price.', '/carShop/images/car4.svg', '" . rand_date(120) . "')");
+  'Daniel Kim', 4, 'Great selection', 'Found exactly what I needed at a fair price.', '" . base_url('images/car4.svg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 
 // Output summary
@@ -271,7 +271,7 @@ header('Content-Type: text/html; charset=utf-8');
   <meta charset="utf-8">
   <title>Seed Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/carShop/style.css">
+  <link rel="stylesheet" href="<?php echo htmlspecialchars(base_url('style.css')); ?>">
   <style>
     body { background: #0b0d10; color: #e5e7eb; font-family: Inter, system-ui, sans-serif; }
     .container { width: min(900px, 92%); margin: 40px auto; }

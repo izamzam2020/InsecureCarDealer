@@ -91,7 +91,7 @@ function formatSize($bytes) {
       <div class="card" style="padding:16px; margin-top:12px;">
         <div class="card__body">
           <h3>File Search</h3>
-          <form method="post" action="/carShop/resources.php<?php echo $path ? '?path=' . urlencode($path) : ''; ?>" style="display:flex; gap:10px; align-items:center; margin-top:8px;">
+          <form method="post" action="<?php echo htmlspecialchars(base_url('resources.php' . ($path ? '?path=' . urlencode($path) : ''))); ?>" style="display:flex; gap:10px; align-items:center; margin-top:8px;">
             <input type="text" name="search" value="<?php echo htmlspecialchars($searchFile); ?>" placeholder="Enter path (e.g., documents found in /documents)" style="flex:1; padding:10px; background:#0f1216; border:1px solid #1f2430; border-radius:10px; color:#e5e7eb;">
             <button class="btn btn--primary" type="submit">Find File</button>
           </form>
@@ -118,13 +118,13 @@ function formatSize($bytes) {
       <?php if ($path) { ?>
         <div class="card" style="padding:12px; margin-top:12px;">
           <div class="card__body" style="display:flex; align-items:center; gap:8px;">
-            <a href="/carShop/resources.php" style="color:#06b6d4; text-decoration:none;">📁 documents</a>
+            <a href="<?php echo htmlspecialchars(base_url('resources.php')); ?>" style="color:#06b6d4; text-decoration:none;">📁 documents</a>
             <?php 
             $pathParts = explode('/', $path);
             $currentPath = '';
             foreach ($pathParts as $part) {
               $currentPath .= ($currentPath ? '/' : '') . $part;
-              echo ' / <a href="/carShop/resources.php?path=' . urlencode($currentPath) . '" style="color:#06b6d4; text-decoration:none;">' . htmlspecialchars($part) . '</a>';
+              echo ' / <a href="' . htmlspecialchars(base_url('resources.php?path=' . urlencode($currentPath))) . '" style="color:#06b6d4; text-decoration:none;">' . htmlspecialchars($part) . '</a>';
             }
             ?>
           </div>
@@ -157,7 +157,7 @@ function formatSize($bytes) {
                   <tr>
                     <td style="padding:12px; border-bottom:1px solid #1f2430;">
                       <?php if ($item['is_dir']) { ?>
-                        <a href="/carShop/resources.php?path=<?php echo urlencode($item['path']); ?>" style="color:#06b6d4; text-decoration:none;">
+                        <a href="<?php echo htmlspecialchars(base_url('resources.php?path=' . urlencode($item['path']))); ?>" style="color:#06b6d4; text-decoration:none;">
                           📁 <?php echo htmlspecialchars($item['name']); ?>
                         </a>
                       <?php } else { ?>
@@ -172,7 +172,7 @@ function formatSize($bytes) {
                     </td>
                     <td style="padding:12px; border-bottom:1px solid #1f2430;">
                       <?php if (!$item['is_dir']) { ?>
-                        <a href="/carShop/download.php?file=<?php echo urlencode($item['path']); ?>" class="btn btn--ghost" style="padding:4px 8px; font-size:12px;">Download</a>
+                        <a href="<?php echo htmlspecialchars(base_url('download.php?file=' . urlencode($item['path']))); ?>" class="btn btn--ghost" style="padding:4px 8px; font-size:12px;">Download</a>
                       <?php } ?>
                     </td>
                   </tr>

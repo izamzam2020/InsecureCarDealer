@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../includes/config.php';
 // Soft 404 page for /admin that returns HTTP 200
 http_response_code(200);
 header('Content-Type: text/html; charset=UTF-8');
@@ -25,7 +26,7 @@ header('Cache-Control: no-store');
     <h1>Page not found</h1>
     <p>Sorry, the page you requested does not exist here.</p>
     <p>This is a custom not found page served with a 200 status code.</p>
-    <p><a href="/carShop/">Return to home</a></p>
+    <p><a href="<?php echo htmlspecialchars(base_url()); ?>">Return to home</a></p>
   </div>
 </body>
 </html>

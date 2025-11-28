@@ -3,7 +3,7 @@
 // NOTE: Do NOT use this in production.
 
 # SET THE BASE URL FOR THE WEBSITE
-$base_url = '';
+$base_url = 'http://localhost/InsecureCarDealer/';
 
 if (!function_exists('base_url')) {
   function base_url(string $path = ''): string {
@@ -19,10 +19,10 @@ if (!function_exists('base_url')) {
 $s = session_status();
 if ($s === PHP_SESSION_NONE) { @session_start(); }
 
-$DB_HOST = '';
-$DB_USER = '';
+$DB_HOST = 'localhost';
+$DB_USER = 'root';
 $DB_PASS = '';
-$DB_NAME = '';
+$DB_NAME = 'car_shop3';
  
 $conn = @mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 $DB_CONNECTED = (bool)$conn;

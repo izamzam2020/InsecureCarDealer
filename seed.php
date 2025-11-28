@@ -250,16 +250,16 @@ for ($i=0; $i<$target; $i++) {
 // Seed reviews (exactly 4 fixed demo reviews)
 mysqli_query($conn, "DELETE FROM reviews");
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Alice Johnson', 5, 'Excellent service', 'Bought a 2021 Civic. Smooth process, great deal.', '" . base_url('images/car1.svg') . "', '" . rand_date(120) . "')");
+  'Alice Johnson', 5, 'Excellent service', 'Bought a 2021 Civic. Smooth process, great deal.', '" . base_url('images/car1.jpg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Marcus Lee', 4, 'Transparent and friendly', 'Staff were honest and helpful. Would buy again.', '" . base_url('images/car2.svg') . "', '" . rand_date(120) . "')");
+  'Marcus Lee', 4, 'Transparent and friendly', 'Staff were honest and helpful. Would buy again.', '" . base_url('images/car2.jpg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Sofia Ramirez', 5, 'Love my new SUV', 'Financing was quick and painless. Highly recommend.', '" . base_url('images/car3.svg') . "', '" . rand_date(120) . "')");
+  'Sofia Ramirez', 5, 'Love my new SUV', 'Financing was quick and painless. Highly recommend.', '" . base_url('images/car3.jpg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 mysqli_query($conn, "INSERT INTO reviews (customer_name, rating, title, body, image, created_at) VALUES (
-  'Daniel Kim', 4, 'Great selection', 'Found exactly what I needed at a fair price.', '" . base_url('images/car4.svg') . "', '" . rand_date(120) . "')");
+  'Daniel Kim', 4, 'Great selection', 'Found exactly what I needed at a fair price.', '" . base_url('images/car4.jpg') . "', '" . rand_date(120) . "')");
 if (mysqli_affected_rows($conn) > 0) { $summary['reviews']++; }
 
 // Output summary

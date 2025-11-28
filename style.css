@@ -41,8 +41,14 @@ body {
 .nav-underline { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); opacity: .8; }
 
 /* Hero */
-.hero { position: relative; min-height: 72vh; display: grid; place-items: center; background: #0a0c0f; overflow: hidden; }
-.hero { background-image: var(--hero-img); background-size: cover; background-position: center; }
+.hero {
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  background: #0a0c0f url('images/car1.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35)); }
 .hero__content { position: relative; text-align: center; padding: 80px 0; }
 .hero h1 { font-size: clamp(28px, 4.5vw, 56px); margin: 0 0 12px; letter-spacing: .3px; }

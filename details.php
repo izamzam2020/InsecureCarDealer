@@ -41,7 +41,7 @@ if ($DB_CONNECTED && $id !== null) {
     <section class="reveal">
       <div class="card" style="overflow:hidden;">
         <div class="card__media">
-          <img src="images/car<?php echo $imgIdx; ?>.svg" alt="<?php echo htmlspecialchars($title); ?>">
+          <img src="images/car<?php echo $imgIdx; ?>.jpg" alt="<?php echo htmlspecialchars($title); ?>">
         </div>
         <div class="card__body" style="padding:16px 16px 24px;">
           <h2 style="margin:0 0 6px; font-size:22px;"><?php echo htmlspecialchars($title); ?></h2>

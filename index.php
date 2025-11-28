@@ -5,7 +5,7 @@ include __DIR__ . '/includes/nav.php';
 ?>
 
 <main>
-  <section class="hero reveal" style="--hero-img: url('images/hero.svg');">
+  <section class="hero reveal">
     <div class="hero__overlay"></div>
     <div class="hero__content container">
       <h1>Welcome to <span class="accent">Speedy Motors</span> – Your Dream Car Awaits</h1>
@@ -41,7 +41,7 @@ include __DIR__ . '/includes/nav.php';
         ?>
           <article class="card reveal">
             <div class="card__media">
-              <img src="images/car<?php echo $imgIdx; ?>.svg" alt="<?php echo htmlspecialchars($title); ?>">
+              <img src="images/car<?php echo $imgIdx; ?>.jpg" alt="<?php echo htmlspecialchars($title); ?>">
             </div>
             <div class="card__body">
               <h3><?php echo htmlspecialchars($title); ?></h3>
